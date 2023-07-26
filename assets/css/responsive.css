@@ -1,1 +1,19 @@
-/* Mobile :  */
+
+/* Mobile */
+@media (max-width: 739px) {
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .song {
+        font-size: 12px;
+    }
+
+    
+
+    .song .title {
+        font-size: 13px;
+        color: var(--text-color);
+    }
+}

@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Music Player</title>
 </head>
-<body>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music player</title>
 <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="./assets/css/responsive.css">
+<body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -24,7 +23,7 @@
 
     <!-- CD -->
     <div class="cd">
-      <div class="cd-thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
+      <div class="cd-thumb" style="background-image: url('https://meliawedding.com.vn/wp-content/uploads/2022/04/hinh-anh-dong-dep-1.gif')">
       </div>
     </div>
 
@@ -47,9 +46,7 @@
         <i class="fas fa-random"></i>
       </div>
     </div>
-
     <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
-
     <audio id="audio" src=""></audio>
   </div>
 
@@ -91,6 +88,7 @@
   </div>
 </div>
 
+
 <script>
     const $ =document.querySelector.bind(document)
     const $$ =document.querySelectorAll.bind(document)
@@ -109,8 +107,8 @@
     const randomBtn = $ ('.btn-random')
     const repeatBtn = $('.btn-repeat')
     const playlist = $('.playlist')
-
-
+   
+    
     const app = {
         currentIndex:0,
         isPlaying :false,
@@ -120,14 +118,14 @@
 
         songs: [
             {
-              name : 'Anh là của em',
+              name : 'Anh Là Của Em',
               singer : 'Karik',
               path: './music/song1.mp3',
-              image :'./img/song1.jpg'
+              image : './img/song1.jpg'
             },
            
             {
-              name : 'Dĩ vãng nhạt nhòa',
+              name : 'Dĩ Vãng Nhạt Nhòa',
               singer : 'Hà Nhi',
               path : './music/song2.mp3',
               image :'./img/song2.jpg'
@@ -137,40 +135,61 @@
               name : 'À Lôi',
               singer : 'Double2T,Masew',
               path : './music/song3.mp3',
-              image :'./img/song3.jpg'
+              image : './img/song3.jpg'
             },
 
             {
-              name : 'Xứng đôi cưới thôi',
+              name : 'Xứng Đôi Cưới Thôi',
               singer : 'Lê Thiện Hiếu',
               path : './music/song4.mp3',
-              image :'./img/song4.jpg'
+              image : './img/song4.jpg'
             },
 
             {
-              name : 'Yêu nhau nhé bạn thân ',
+              name : 'Yêu Nhau Nhé Bạn Thân ',
               singer : 'Phạm Đình Thái Ngân',
               path : './music/song5.mp3',
-              image :'img/song5.jpg'
+              image : 'img/song5.jpg'
             },
 
             {
-              name : 'Phụ tình',
+              name : 'Phụ Tình',
               singer : 'Trịnh Đình Quang',
               path : './music/song6.mp3',
-              image :'./img/song6.jpg'
+              image : './img/song6.jpg'
             },
 
             {
-              name : 'Rượu mừng hóa người dưng',
+              name : 'Rượu Mừng Hóa Người Dưng',
               singer : 'TLong',
               path : './music/song7.mp3',
-              image :'img/song7.jpg'
+              image : './img/song7.jpg'
+            },
+
+            {
+              name : 'Phía Cuối Con Đường',
+              singer : 'Thùy Chi, M4U',
+              path : './music/song8.mp3',
+              image : './img/song8.jpg'
+            },
+
+            {
+              name : 'Đơn Giản Anh Yêu Em',
+              singer : 'Hồ Quốc Việt',
+              path : './music/song9.mp3',
+              image :'./img/song9.jpg'
+            },
+
+            {
+              name : 'Ngoài 30',
+              singer : 'Thái Học',
+              path : './music/song10.mp3',
+              image : './img/song10.jpg',
             },
         ],
         setConfig: function(key, value) {
-             this.config[key] = value;
-             localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
+            //  this.config[key] = value;
+            //  localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
         },
         render : function() {
             const htmls = this.songs.map((song, index) => {
@@ -192,7 +211,7 @@
             playlist.innerHTML =htmls.join('')
         },
         defineProperties: function() {
-          Object.defineProperty(this,"currentSong", {
+          Object.defineProperty(this,'currentSong', {
             get: function() {
               return this.songs[this.currentIndex]
             }
@@ -200,8 +219,8 @@
         },
 
         handleEvents: function() {
-          const _this = this
-          const cdWidth = cd.offsetWidth
+               const _this = this
+               const cdWidth = cd.offsetWidth
 
           // Xử lý CD quay / dừng
           const cdThumbAnimate= cdThumb.animate([
@@ -260,7 +279,7 @@
           // Xử lý lặp lại một song
           repeatBtn.onclick = function(e) {
               _this.isRepeat = !_this.isRepeat
-              _this.setConfig('isRepeat', _this.isRepeat)
+              // _this.setConfig('isRepeat', _this.isRepeat)
               repeatBtn.classList.toggle('active', _this.isRepeat)
 
           }
@@ -291,7 +310,7 @@
           // Xử lý bật / tắt random song
           randomBtn.onclick = function(e) {
                _this.isRandom = !_this.isRandom
-               _this.setConfig('isRandom', _this.isRandom)
+              //  _this.setConfig('isRandom', _this.isRandom)
                randomBtn.classList.toggle('active', _this.isRandom)
           }
 
@@ -344,8 +363,8 @@
 
         },
         loadConfig: function() {
-            this.isRandom = this.config.isRandom
-            this.isRepeat = this.config.isRepeat
+            // this.isRandom = this.config.isRandom
+            // this.isRepeat = this.config.isRepeat
         },
         nextSong: function () {
           this.currentIndex++
@@ -359,6 +378,7 @@
             if(this.currentIndex < 0) {
               this.currentIndex = this.songs.length - 1
             }
+            this.loadCurrentSong()
         },
         playRandomSong: function () {
             let NewIndex
@@ -389,10 +409,15 @@
           // randomBtn.classList.toggle('active', this.isRandom)
           // repeatBtn.classList.toggle('active', this.isRepeat)
         }
+
+        
     }
 
     app.start()
 </script>
+<footer>
+  <code>© Made by Tien_Dev - July, 2023</code>
+</footer>
  <!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
 </body>
 </html>
