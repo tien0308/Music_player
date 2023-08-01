@@ -1,5 +1,5 @@
 :root {
-  --primary-color:rgba(30, 27, 29, 0.53);
+  --primary-color: rgba(30, 27, 29, 0.53);
   --text-color: #333;
   --white-color: #fff;
 }
@@ -11,7 +11,7 @@
 }
 
 body {
-  background: linear-gradient(50deg,green,#ce4567,#a5d4e1 90%);
+  background: linear-gradient(50deg, green, #ce4567, #a5d4e1 90%);
   height: 100%;
   padding: 0;
   margin: 0;
@@ -41,7 +41,7 @@ html {
 
 .dashboard {
   padding: 16px 16px 14px;
-  background-image: url('https://scontent.fhph3-1.fna.fbcdn.net/v/t39.30808-6/334758930_209064174972128_3750849252141886873_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=0U-z0aihYaUAX-rRHHP&_nc_ht=scontent.fhph3-1.fna&oh=00_AfBWw9ZWLaM_xSaGTOALuEe9siY6tz1UF67m7PwjHIUlsA&oe=64C91E45');
+  background-image: url('../../img/anhcuatoi.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -94,7 +94,7 @@ header h2 {
   padding: 18px 0 8px 0;
 }
 
-.control .btn ,
+.control .btn,
 .volume-icon {
   display: flex;
   color: var(--text-color);
@@ -201,12 +201,12 @@ header h2 {
 }
 
 .time-audio {
-  font-size: 12px; 
+  font-size: 12px;
   display: flex;
-  justify-content: space-between; 
-  line-height: 12px; 
+  justify-content: space-between;
+  line-height: 12px;
   color: var(--primary-color);
-}   
+}
 
 footer {
   height: 8vh;
